@@ -1,38 +1,85 @@
-.App {
+@import url("https://fonts.googleapis.com/css2?family=Prompt");
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Prompt", sans-serif;
+  background: rgb(238, 174, 202);
+  background: radial-gradient(
+    circle,
+    rgba(238, 174, 202, 1) 0%,
+    rgba(148, 187, 233, 1) 100%
+  );
+  background-attachment: fixed;
+}
+h2 {
+  margin-top: 3rem;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin: 1rem auto;
+  padding: 1rem 2rem;
+  width: 420px;
+  font-weight: bold;
+}
+.salary {
+  width: 100%;
+}
+.salary label {
+  margin-left: 0.4rem;
 }
 
-.App-link {
-  color: #61dafb;
+.overtime {
+  width: 100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.input {
+  width: 75%;
+  margin-bottom: 1rem;
+  padding: 0.25rem;
+  border-radius: 9px;
+  font-size: 18px;
+  text-align: right;
+  border: none;
+}
+
+.input:focus {
+  outline: none;
+}
+
+.result {
+  width: 100%;
+}
+
+.showdetail input {
+  width: 70%;
+  margin-bottom: 1rem;
+  padding: 0.25rem;
+  border-radius: 9px;
+  font-size: 18px;
+  text-align: right;
+  border: none;
+}
+
+.all-result {
+  display: flex;
+  justify-content: space-between;
+  margin: 1.5rem auto;
+  width: 100%;
+  font-size: 1.5rem;
+}
+
+.all-result input {
+  width: 65%;
+  margin-bottom: 1rem;
+  padding: 0.25rem;
+  border-radius: 9px;
+  font-size: 25px;
+  font-weight: bold;
+  text-align: right;
+  border: none;
 }

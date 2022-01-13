@@ -3,7 +3,8 @@ import InputBaseSalary from "./components/InputBaseSalary";
 
 function App() {
   return (
-    <div className="App">
+    <div>
+      <h2>โปรแกรมคำนวณเงินเดือน</h2>
       <InputBaseSalary />
     </div>
   );
