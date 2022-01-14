@@ -3,9 +3,9 @@ import { useEffect, useState } from "react";
 const InputBaseSalary = () => {
   const [baseSalary, setBaseSalary] = useState(" ");
 
-  const [ot1, setOt1] = useState("");
-  const [ot15, setOt15] = useState("");
-  const [ot3, setOt3] = useState("");
+  const [ot1, setOt1] = useState("0");
+  const [ot15, setOt15] = useState("0");
+  const [ot3, setOt3] = useState("0");
 
   const [perDay, setPerDay] = useState("");
   const [perHour, setPerHour] = useState("");
@@ -21,17 +21,17 @@ const InputBaseSalary = () => {
 
   useEffect(() => {
     setPerHour((perDay / 8).toFixed(3));
-  }, [perDay]);
-
-  useEffect(() => {
     const OTx1 = perHour * ot1;
     const OTx1_5 = perHour * ot15 * 1.5;
     const OTx3 = perHour * ot3 * 3;
 
     const result = Number(baseSalary) + OTx1 + OTx1_5 + OTx3;
     setAllSalary(result.toFixed(3));
-    console.log(OTx1, OTx1_5, OTx3);
-  }, [ot1, ot15, ot3]);
+  }, [perDay, ot1, ot15, ot3]);
+
+  const formatNumber = (num) => {
+    return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,");
+  };
 
   return (
     <div className="container">
@@ -83,7 +83,7 @@ const InputBaseSalary = () => {
           <label>รายได้ต่อชัวโมง</label>
         </div>
         <div className="all-result">
-          <input type="text" value={allSalary} disabled />
+          <input type="text" value={formatNumber(allSalary)} disabled />
           <label>เงินที่จะได้รับ</label>
         </div>
       </div>
